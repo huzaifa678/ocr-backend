@@ -1,0 +1,7 @@
+easyocr==1.7.2
+fastapi>=0.112.0
+uvicorn>=0.30.0
+pillow<=12.2.0
+numpy==2.4.4
+paddlepaddle==3.2.0
+paddleocr>=2.0.1
