@@ -28,7 +28,6 @@ def extract_text_from_image(image_bytes: bytes, option: Literal["ocr", "paddle"]
         paddleOcr = PaddleOCR(use_angle_cls=True, lang='en')
         logger.info("PaddleOCR model loaded successfully.")
         results = paddleOcr.ocr(image_np)
-        print(results[0])
         logger.info(f"Extracted {len(results[0]['rec_texts'])} text lines using PaddleOCR.")
         results = results[0]['rec_texts']
     else:
