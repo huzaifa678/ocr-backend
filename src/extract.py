@@ -10,7 +10,7 @@ from src.model import ExtractResult
 reader = easyocr.Reader(['en'], gpu=False)
 logger = setup_logger()
 
-def extract_text_from_image(image_bytes: bytes, option: Literal["ocr", "paddle"]) -> ExtractResult:
+def extract_text_from_image(image_bytes: bytes, option: Literal["easy_ocr", "paddle"]) -> ExtractResult:
     
     logger.info("Starting text extraction from image.")
 

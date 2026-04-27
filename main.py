@@ -10,7 +10,7 @@ app = FastAPI()
 logger = setup_logger()
 
 @app.post("/extract")
-async def extract_text(file: UploadFile = File(...), option: Literal["ocr", "paddle"] = "paddle") -> ExtractResponse:
+async def extract_text(file: UploadFile = File(...), option: Literal["easy_ocr", "paddle"] = "paddle") -> ExtractResponse:
 
     if file.content_type not in {"image/jpeg", "image/jpg"}:
         logger.warning("Rejected file due to invalid MIME type.")
