@@ -11,6 +11,26 @@ reader = easyocr.Reader(['en'], gpu=False)
 logger = setup_logger()
 
 def extract_text_from_image(image_bytes: bytes, option: Literal["easy_ocr", "paddle"]) -> ExtractResult:
+    """
+    This function takes the image bytes and the OCR option, converts back to the image, and runs OCR to extract text from the image.
+
+    Parameters
+    ----------
+    Param: bytes
+        a single image stream of bytes
+    Param: option
+        a string that specifies which OCR method to use ("easy_ocr" or "paddle)
+
+    Returns
+    -------
+    List[str]
+        Returns the extracted text lines
+
+    Raise
+    -----
+    ValueError
+        If the image file is invaid
+    """
     
     logger.info("Starting text extraction from image.")
 
